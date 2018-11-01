@@ -1,0 +1,51 @@
+*{
+  font-family: Verdana;
+}
+header{
+  background-color: #AFAFAF;
+  color: #FF5F00;
+  text-align: center;
+}
+nav{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+nav a{
+  border: 1px solid #AFAFAF;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: #0082D1
+}
+nav a:hover{
+  background-color: #AFAFAF;
+  color: #FF5F00;
+}
+
+table th{
+  background-color: #76B900;
+  color: white;
+  text-align: center;
+}
+table tr th{
+  padding: 10px;
+  border: 2px solid black;
+}
+table tr td{
+  padding: 10px;
+  border: 2px solid black;
+}
+table{
+    border-collapse: collapse;
+    box-shadow: 2px 2px 4px #000000;
+}
+footer{
+  background-color: #FF5F00;
+  color: black;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
