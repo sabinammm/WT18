@@ -37,16 +37,25 @@ if (! $file) {
      * prüft, ob ein Dateizeiger am Ende der Datei steht
      */
     while ( ! feof ( $file ) ) {
-
+      if($counter%10==0)
+      {
+        echo "<div class='col-xl-4 col-lg-6 col-md-12'>";
+        echo "<ul class='lisg-group'>";
+      }
       $vorname = fgets($file);
       $nachmane = fgets($file);
       $email = fgets($file);
       $ip = fgets($file);
       $leer = fgets($file);
       echo "<li class='list-group-item'>".$vorname." ".$nachmane." (<a href='mailto:".$email."'>".$email."</a>) </li>";
+      if($counter%10==9)
+      {
+        echo "</ul>";
+        echo "</div>";
       }
-      echo "</ul>";
-      echo "</div>";
+      $counter++;
+      }
+
 
         /*
          * fegts() liest eine Zeile einer Datei aus
