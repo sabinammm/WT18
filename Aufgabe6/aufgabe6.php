@@ -39,7 +39,7 @@ if (! $file) {
     while ( ! feof ( $file ) ) {
       if($counter%10==0)
       {
-        echo "<div class='col-xl-4 col-lg-6 col-md-12' style='background-color:dimgray: margin:10px;'>";
+        echo "<div class='col-xl-4 col-lg-6 col-md-12' style='background-color:dimgray; margin:10px;'>";
         echo "<ul class='list-group' style='padding:10px;'>";
       }
       $vorname = fgets($file);
