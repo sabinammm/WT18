@@ -31,7 +31,7 @@ if (! $file) {
 
   {
     echo "<div class='row'>";
-    echo "<ul class='list-group'>";
+    $counter=0;
     /*
      * feof - end of file
      * prüft, ob ein Dateizeiger am Ende der Datei steht
@@ -39,8 +39,8 @@ if (! $file) {
     while ( ! feof ( $file ) ) {
       if($counter%10==0)
       {
-        echo "<div class='col-xl-4 col-lg-6 col-md-12'>";
-        echo "<ul class='lisg-group'>";
+        echo "<div class='col-xl-4 col-lg-6 col-md-12' style='background-color:dimgray: margin:10px;'>";
+        echo "<ul class='list-group' style='padding:10px;'>";
       }
       $vorname = fgets($file);
       $nachmane = fgets($file);
