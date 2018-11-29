@@ -28,11 +28,26 @@ $file = @fopen ( "./mockdatatext", "r" );
 if (! $file) {
     echo "Es ist ein Problem beim Öffnen der Datei 'mockupdatatext' aufgetreten.";
 } else {
+
+  {
+    echo "<div class='row'>";
+    echo "<ul class='list-group'>";
     /*
      * feof - end of file
      * prüft, ob ein Dateizeiger am Ende der Datei steht
      */
     while ( ! feof ( $file ) ) {
+
+      $vorname = fgets($file);
+      $nachmane = fgets($file);
+      $email = fgets($file);
+      $ip = fgets($file);
+      $leer = fgets($file);
+      echo "<li class='list-group-item'>".$vorname." ".$nachmane." (<a href='mailto:".$email."'>".$email."</a>) </li>";
+      }
+      echo "</ul>";
+      echo "</div>";
+
         /*
          * fegts() liest eine Zeile einer Datei aus
          * fgets() gibt einen String zürück
@@ -40,8 +55,7 @@ if (! $file) {
          * in der nächsten Zeile (außer, es wurde eine
          * Leselänge als 2. Parameter fgets übergeben)
          */
-        $current_line = fgets ( $file );
-        echo $current_line . "<br/>";
+
         /*
          * Sie können für die Lösung der Aufgabe davon ausgehen,
          * dass jeder Datensatz aus 4 Zeilen besteht und dass zwischen
