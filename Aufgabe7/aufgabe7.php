@@ -19,6 +19,25 @@
     <input type="text" name="nachname" placeholder="Nachname">
   </div>
 
+  <div class="form-group">
+    <label for="email">E-mail : </label>
+    <input type="email" name="email" placeholder="E-mail">
+  </div>
+
+  <div class="form-group">
+    <label for="studiengang">Studiengang : </label>
+    <select name="studiengang">
+      <option value="FIW">Informatik und Wirtschaft</option>
+      <option value="AI">Angewandte Informatik</option>
+      <option value="IMI">Internationale Medieninformatik</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="pwd">Passwort : </label>
+    <input type="password" name="pwd" placeholder="Passwort">
+  </div>
+
 
   <button type="submit">Anmelden</button>
 </form>
