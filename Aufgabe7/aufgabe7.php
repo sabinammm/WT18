@@ -25,7 +25,7 @@
         <p>
         Herzlichen Dank " . $vorname . " " . $nachname . " von Studiengang " . $studiengang . "!<br/>
         Wir haben eine E-mail an " . $email . " gesendet. <br/>
-        <a href="./aufgabe7.php">zurück</a>
+        <a href='./aufgabe7.php'>zurück</a>
         </p>
         ";
       }
@@ -33,7 +33,7 @@
     if(($_POST && $fehler) || empty($_POST)) :
 
     ?>
-    
+
 
 <form action="./aufgabe7.php" method="post" class="form-horizontal">
   <div class="form-group row">
