@@ -6,41 +6,61 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-  <div  class="container-fluid">
-<h1>Anmeldung</h1>
+  <div class="container">
+    <h1>Anmeldung</h1>
+    <?php
+    IF($_POST) :
+    ?>
+    <p>
+      Herzlichen Dank
+      <?php $_POST["vorname"]." ".$_POST["nachname"]; ?>
+      vom Studiengang
+      <?php echo $_POST["studiengang"]; ?> ! <br/>
+      Wir haben E-mail an
+      <?php echo $_POST["email"]; ?> gesendet. <br/>
+      <a href="./aufgabe7.php">zurück</a>
+    </php>
+    <?php
+    else :
+    ?>
+
 <form action="./aufgabe7.php" method="post" class="form-horizontal">
-  <div class="form-group">
-    <label for="vorname">Vorname : </label>
-    <input type="text" name="vorname" placeholder="Vorname">
+  <div class="form-group row">
+    <label for="vorname" class="col-3">Vorname : </label>
+    <input type="text" name="vorname" placeholder="Vorname" class="form-control col-9">
   </div>
 
-  <div class="form-group">
-    <label for="nachname">Nachname : </label>
-    <input type="text" name="nachname" placeholder="Nachname">
+  <div class="form-group row">
+    <label for="nachname"class="col-3">Nachname : </label>
+    <input type="text" name="nachname" placeholder="Nachname" class="form-control col-9">
   </div>
 
-  <div class="form-group">
-    <label for="email">E-mail : </label>
-    <input type="email" name="email" placeholder="E-mail">
+  <div class="form-group row">
+    <label for="email" class="col-3">E-mail : </label>
+    <input type="email" name="email" placeholder="E-mail" autocomplete="off" class="form-control col-9">
   </div>
 
-  <div class="form-group">
-    <label for="studiengang">Studiengang : </label>
-    <select name="studiengang">
+  <div class="form-group row">
+    <label for="studiengang" class="col-3">Studiengang : </label>
+    <select name="studiengang" class="form-control col-9">
       <option value="FIW">Informatik und Wirtschaft</option>
       <option value="AI">Angewandte Informatik</option>
       <option value="IMI">Internationale Medieninformatik</option>
     </select>
   </div>
 
-  <div class="form-group">
-    <label for="pwd">Passwort : </label>
-    <input type="password" name="pwd" placeholder="Passwort">
+  <div class="form-group row">
+    <label for="pwd" class="col-3">Passwort : </label>
+    <input type="password" name="pwd" placeholder="Passwort" class="form-control col-9" autocomplete="off">
   </div>
 
-
-  <button type="submit">Anmelden</button>
+  <div class="form-group row">
+    <button type="submit">Anmelden</button>
+  </div>
 </form>
+<?php
+endif;
+?>
 </div>
 
 
