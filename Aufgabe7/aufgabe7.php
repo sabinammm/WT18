@@ -10,6 +10,15 @@
     <h1>Anmeldung</h1>
     <?php
     IF($_POST) :
+
+      $vorname = filter_var($_POST["vorname"], FILTER_SANITIZE_STRING);
+      $nachname = filter_var($_POST["nachname"], FILTER_SANITIZE_STRING);
+      $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+      $studiengang = filter_var($_POST["studiengang"], FILTER_SANITIZE_STRING); //eigentlich unnötig
+
+
+
+
     ?>
     <p>
       Herzlichen Dank
