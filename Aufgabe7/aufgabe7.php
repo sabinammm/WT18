@@ -38,7 +38,22 @@
 <form action="./aufgabe7.php" method="post" class="form-horizontal">
   <div class="form-group row">
     <label for="vorname" class="col-3">Vorname : </label>
-    <input type="text" name="vorname" placeholder="Vorname" class="form-control col-9">
+    <?php
+    if (isset($vorname) && !$vorname) {
+      echo "
+      <input type='text' name='vorname' placeholder='Vorname' class='form-control col-9 is-invalid'>
+      <div class='invalid-feedback'>
+      Bitte Vorname eintragen!
+      </div>
+      ";
+    }
+    else{
+      echo"
+      <input type='text' name='vorname' placeholder='Vorname' class='form-control col-9'>
+      ";
+    } 
+
+    ?>
   </div>
 
   <div class="form-group row">
