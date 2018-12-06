@@ -33,18 +33,7 @@
     if(($_POST && $fehler) || empty($_POST)) :
 
     ?>
-    <p>
-      Herzlichen Dank
-      <?php $_POST["vorname"]." ".$_POST["nachname"]; ?>
-      vom Studiengang
-      <?php echo $_POST["studiengang"]; ?> ! <br/>
-      Wir haben E-mail an
-      <?php echo $_POST["email"]; ?> gesendet. <br/>
-      <a href="./aufgabe7.php">zurück</a>
-    </php>
-    <?php
-    else :
-    ?>
+    
 
 <form action="./aufgabe7.php" method="post" class="form-horizontal">
   <div class="form-group row">
