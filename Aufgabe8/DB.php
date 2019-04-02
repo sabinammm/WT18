@@ -33,8 +33,8 @@ class DB {
 	 * hier fehlt die SQL-Anfrage
 	 */
 	public function get($id) {
-		$statement = $this->connection->prepare ('SELECT * FROM mockupdatatable WHERE id=:id');
-		$statement->bindParam ( ':id', $id, PDO::PARAM_INT ); /*Nur dafür da, um sicher zu gehen, dass es sich bei der Auswahl um eine Zahl handelt*/
+		$statement = $this->connection->prepare ( /* SQL-Anfrage */ );
+		$statement->bindParam ( ':id', $id, PDO::PARAM_INT );
 		$statement->execute ();
 		return $statement->fetch ();
 	}
@@ -43,9 +43,7 @@ class DB {
 	 * hier fehlt die SQL-Anfrage
 	 */
 	public function add(array $daten) {
-		$statement = $this->connection->prepare ('INSERT INTO mockupdatatable
-																							(vorname, nachname, email, ipnr)
-																							VALUES(?,?,?,?)');
+		$statement = $this->connection->prepare (  /* SQL-Anfrage */ );
         return $statement->execute ( $daten );
 	}
 
@@ -53,8 +51,8 @@ class DB {
      * hier fehlt die SQL-Anfrage
      */
 	public function edit(array $daten) {
-	   // print_r($daten);
-		$statement = $this->connection->prepare ( 'UPDATE mockupdatatable SET vorname=?, nachname=?, email=?, ipnr=? WHERE id=?');
+	    print_r($daten);
+		$statement = $this->connection->prepare ( /* SQL-Anfrage */ );
 		return $statement->execute ( $daten );
 	}
 
@@ -63,8 +61,9 @@ class DB {
 	 */
 	public function delete($id) {
 		$statement = $this->connection->prepare ( 'DELETE FROM mockupdatatable WHERE id = ?' );
-		$statement -> bindParam(1, $id);
-		return $statement->execute (  );
+		return $statement->execute ( array (
+				$id 
+		) );
 	}
 }
 ?>
